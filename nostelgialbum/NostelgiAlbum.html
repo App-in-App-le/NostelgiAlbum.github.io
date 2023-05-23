@@ -1,0 +1,717 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>NostelgiAlbum</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="88f49326-92f4-4eb5-aa54-1051ae49e845" class="page sans"><header><div class="page-header-icon undefined"><img class="icon" src="https://www.notion.so/icons/book-closed_brown.svg"/></div><h1 class="page-title">NostelgiAlbum</h1></header><div class="page-body"><h2 id="afac3fd9-3bef-403f-870c-d4f020c94dbe" class=""><mark class="highlight-orange"><code>💡 App Description</code></mark></h2><hr id="9a23cbb2-05e7-4a89-8901-1b906bde40eb"/><ul id="ce95d2fa-dd6f-4b8c-9dca-552fe0a49421" class="bulleted-list"><li style="list-style-type:disc">앨범을 만들고 추억을 간직하고 싶은 사진들을 넣어 제목, 내용과 함께 꾸밀 수 있습니다.</li></ul><ul id="c739594e-2de7-47e0-a97c-a5d30f99aa62" class="bulleted-list"><li style="list-style-type:disc">앨범을 다른 사람들과 공유하며 추억을 나눌 수 있습니다.</li></ul><ul id="f9fcca30-0294-4377-a0d8-1cbd4aa44a46" class="bulleted-list"><li style="list-style-type:disc">앨범 표지, 글꼴, 테마 색을 수정하며 앨범을 자유롭게 꾸며보세요.</li></ul><p id="200be451-a845-4fa6-b978-241c2fab7cde" class="">
+</p><h2 id="fa2936fa-74fb-42e6-b789-c5be9928611e" class=""><mark class="highlight-teal"><code><strong>💡 App Tutorial</strong></code></mark></h2><hr id="06725f7f-e0c0-43f5-9294-51bd116220a3"/><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">앨범 추가</summary><div class="indented"><ol type="1" id="f608fe40-1311-43c7-b872-3d9b39e0abc0" class="numbered-list" start="1"><li>앨범 목록 화면의 + 버튼을 이용해 앨범을 만들 수 있습니다.</li></ol><ol type="1" id="40bbb816-68a5-4c31-b5e8-d7e9a27ba3ca" class="numbered-list" start="2"><li>앨범은 총 6개까지 생성 가능합니다.<figure id="6817d737-915a-4fd7-bf91-095fccead0b6" class="image"><a href="NostelgiAlbum/KakaoTalk_Photo_2023-05-21-23-34-33.jpeg"><img style="width:288px" src="NostelgiAlbum/KakaoTalk_Photo_2023-05-21-23-34-33.jpeg"/></a></figure></li></ol><p id="3c34f0a5-1e2e-4d8a-bb6f-6f457a0bd5c3" class="">
+</p><ol type="1" id="04866ea5-11d7-4f27-8595-3734e4879b2f" class="numbered-list" start="3"><li>앨범은 이름과 커버 이미지를 모두 설정해야 생성이 가능하고, 커버 이미지는 기본 제공 이미지와 디바이스의 사진 중 하나를 선택하여 저장 할 수 있습니다.<ul id="c3e00b7e-8b89-4b6e-ad1f-470ad76b6c0a" class="bulleted-list"><li style="list-style-type:disc"><code>중복 제목</code>의 앨범은 생성할 수 없습니다.</li></ul><ul id="02eeb4e4-c558-40ba-84ca-7cbda72356b1" class="bulleted-list"><li style="list-style-type:disc"><code>제목 길이</code> 는 10자로 제한되어 있습니다.</li></ul><figure id="9ce8c8e2-7ef7-4146-8e43-d4033879b010" class="image"><a href="NostelgiAlbum/KakaoTalk_Photo_2023-05-21-23-29-30_004.png"><img style="width:288px" src="NostelgiAlbum/KakaoTalk_Photo_2023-05-21-23-29-30_004.png"/></a></figure></li></ol><p id="1d389ee5-f601-4d14-80b1-534b77ad8085" class="">
+</p><ol type="1" id="1586b0b1-1692-494e-a863-0af062f0ce96" class="numbered-list" start="4"><li>앨범 만들기 기능을 사용하여 자신만의 앨범들을 만들어 보세요<figure id="36648682-587c-4fb1-b75f-1f1a1ec2dc10" class="image"><a href="NostelgiAlbum/IMG_45DFA78C6B93-1.jpeg"><img style="width:288px" src="NostelgiAlbum/IMG_45DFA78C6B93-1.jpeg"/></a></figure></li></ol><p id="00690eed-42ce-4deb-bb27-695ec97d9f6b" class="">
+</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">앨범 수정 및 삭제</summary><div class="indented"><ol type="1" id="51bf580b-2b78-47aa-bcff-467554335952" class="numbered-list" start="1"><li>수정 혹은 삭제를 원하는 앨범을 꾹 누릅니다.<figure id="573e1cb8-7772-4b5b-9e7f-2ad6c69dcea9" class="image"><a href="NostelgiAlbum/Untitled.png"><img style="width:288px" src="NostelgiAlbum/Untitled.png"/></a></figure><p id="95c3be4b-18be-4b42-aac3-53092ffc5936" class="">
+</p></li></ol><ol type="1" id="799b50c6-eec2-4f2b-8f12-6046ac23675c" class="numbered-list" start="2"><li>앨범 수정을 누르면 제목 혹은 커버 이미지를 변경할 수 있는 창이 나옵니다.<figure id="17bcae72-f135-455a-aae0-ccd9a0a95139" class="image"><a href="NostelgiAlbum/Untitled%201.png"><img style="width:288px" src="NostelgiAlbum/Untitled%201.png"/></a></figure><p id="6aae5cf8-9827-49d9-b4c9-66053da0b70f" class="">
+</p></li></ol><ol type="1" id="a2146980-5d8e-4975-ae34-2071b1b20db0" class="numbered-list" start="3"><li>앨범 삭제를 누르면 확인 문구가 한 차례 더 나오고 “예” 을 누르면 앨범이 삭제됩니다.<figure id="df5de2e7-c817-44ef-8369-468b2d28c948" class="image"><a href="NostelgiAlbum/Untitled%202.png"><img style="width:288px" src="NostelgiAlbum/Untitled%202.png"/></a></figure><p id="8c0eb54f-26a9-473c-a7be-636660f74a3d" class="">
+</p></li></ol></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">앨범 사진 추가</summary><div class="indented"><ol type="1" id="86c0dd55-2f77-439c-b9ea-c55be58f9251" class="numbered-list" start="1"><li>생성된 앨범을 탭 하여 앨범으로 진입합니다.<figure id="466f0f9a-d17d-415b-aaf6-5e50fd28ac11" class="image"><a href="NostelgiAlbum/IMG_45DFA78C6B93-1.jpeg"><img style="width:288px" src="NostelgiAlbum/IMG_45DFA78C6B93-1.jpeg"/></a></figure><p id="56924dac-905e-474a-8ccd-4edaa7a50f02" class="">
+</p></li></ol><ol type="1" id="a506b7d1-0bcc-4db9-91dd-ad028f13544b" class="numbered-list" start="2"><li>앨범 진입 후, + 버튼을 눌러 사진을 추가할 수 있습니다.<figure id="bacd548e-0554-4148-ac56-3a88c4409bd2" class="image"><a href="NostelgiAlbum/IMG_628BC2ED6B0F-1.jpeg"><img style="width:288px" src="NostelgiAlbum/IMG_628BC2ED6B0F-1.jpeg"/></a></figure></li></ol><p id="ca491442-df45-4ea0-a09c-d2802ce7f64c" class="">
+</p><ol type="1" id="7a56de72-03c7-415c-ad8b-859cad3be7f8" class="numbered-list" start="3"><li>+버튼을 누르면 그림과 같이 사진, 사진 제목, 사진 설명을 입력하여 사진을 저장할 수 있습니다.<figure id="d39e117d-f1fd-48f2-a8d7-257d7d860d30" class="image"><a href="NostelgiAlbum/IMG_E5AB5747E29F-1.jpeg"><img style="width:288px" src="NostelgiAlbum/IMG_E5AB5747E29F-1.jpeg"/></a></figure></li></ol><p id="26dcc56a-7050-4beb-8efb-87ba09faaff2" class="">
+</p><ol type="1" id="3f0e596e-a2ed-49e0-8fe9-64ecb9b04ba3" class="numbered-list" start="4"><li>원하는 사진과 설명을 적어 추억을 남겨보세요.<figure id="cb4436d5-a401-45ef-9ada-290bbaba3f13" class="image"><a href="NostelgiAlbum/KakaoTalk_Photo_2023-05-21-23-29-30_003.png"><img style="width:288px" src="NostelgiAlbum/KakaoTalk_Photo_2023-05-21-23-29-30_003.png"/></a></figure></li></ol><p id="a540e1c3-77ac-4210-9906-772561fba6ee" class="">
+</p><p id="3bafa6b3-4910-4e78-b6f5-84c078a0e2b1" class="">
+</p><p id="449a3bd6-760f-4c68-a39b-7be6b2f2aced" class="">
+</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">앨범 사진 수정 및 삭제</summary><div class="indented"><ol type="1" id="e0bc16bb-0013-4400-8a64-468fe94cbce0" class="numbered-list" start="1"><li>앨범 내의 삭제를 원하는 사진을 꾹 누릅니다.<figure id="b93b5c2a-d970-42c5-95c9-4fec1582811b" class="image"><a href="NostelgiAlbum/Untitled%203.png"><img style="width:288px" src="NostelgiAlbum/Untitled%203.png"/></a></figure><p id="6f05be9f-5555-4fc0-9cdf-23939b7f5cef" class="">
+</p></li></ol><ol type="1" id="1d869334-1684-4091-b57e-9a3b410f4e08" class="numbered-list" start="2"><li>사진 삭제 버튼을 누르면 사진이 삭제됩니다.
+</li></ol><ol type="1" id="50fdf933-e1d0-492b-9a70-63fb6a66f68a" class="numbered-list" start="3"><li>사진을 눌러 상세 페이지로 진입 한 후, 왼쪽 상단의 연필 모양 버튼을 누르면 사진 수정이 가능합니다.<figure id="5011ed76-b523-4676-a21c-e357a27a1e05" class="image"><a href="NostelgiAlbum/Untitled%204.png"><img style="width:288px" src="NostelgiAlbum/Untitled%204.png"/></a></figure><p id="c71958e6-d574-41c8-bd61-7cd64001657b" class="">
+</p></li></ol></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">앨범 사진 검색</summary><div class="indented"><ol type="1" id="374b6354-cfd2-4461-b35b-59e2db931235" class="numbered-list" start="1"><li>앨범 검색은 사진의 제목, 내용을 이용해 검색하거나 페이지 단위로 탐색할 수 있습니다.</li></ol><p id="513ffa2e-e4d0-4c50-8907-c7138f11fe98" class="">
+</p><ol type="1" id="8496aa41-38cb-4565-8026-ca64ffbbada2" class="numbered-list" start="2"><li>앨범 내의 페이지 버튼을 눌러 페이지 검색에 진입합니다.<figure id="03b670b8-75e0-401e-9bc5-f54d04e65351" class="image"><a href="NostelgiAlbum/IMG_F2E1995B4153-1.jpeg"><img style="width:288px" src="NostelgiAlbum/IMG_F2E1995B4153-1.jpeg"/></a></figure><p id="bf031a42-4146-4a73-a4d6-0fd5ff28291f" class="">
+</p></li></ol><ol type="1" id="d6766b26-6389-4303-b3dc-058f6365c454" class="numbered-list" start="3"><li>페이지 들의 정보를 확인하고 원하는 페이지를 클릭하면 해당 페이지로 이동합니다.<figure id="1aa16b55-5f0c-491c-9a48-a6e4adc4f671" class="image"><a href="NostelgiAlbum/IMG_13906AD6F107-1.jpeg"><img style="width:288px" src="NostelgiAlbum/IMG_13906AD6F107-1.jpeg"/></a></figure><p id="277255af-9c29-49f1-a892-0da82ce70962" class="">
+</p></li></ol><ol type="1" id="f730761f-35df-4fef-af79-4c17ccc8bb23" class="numbered-list" start="4"><li>앨범 페이지 하단 <code>ToolBar</code> 의 가장 왼쪽의 돋보기 모양을 탭 하면 사진의 제목 및 내용을 검색할 수 있는 검색 창이 나옵니다.<figure id="0cc5aba0-1d64-49de-b506-69d1cdac7ee3" class="image"><a href="NostelgiAlbum/IMG_B288C1FDCEC8-1.jpeg"><img style="width:288px" src="NostelgiAlbum/IMG_B288C1FDCEC8-1.jpeg"/></a></figure><p id="9e9df916-7687-42f5-a3a0-660d94252342" class="">
+</p></li></ol><ol type="1" id="d1bc99d1-723a-4baa-a52c-383c6e4f0c98" class="numbered-list" start="5"><li>검색 기능을 이용해 원하는 앨범의 사진들을 쉽게 찾아보세요.
+</li></ol></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">앨범 공유</summary><div class="indented"><ol type="1" id="243751c9-dfae-44d0-9ad0-5e98de1b6b13" class="numbered-list" start="1"><li>공유 버튼을 클릭 해 원하는 방식으로 <code>.nost</code> 파일을 상대방에게 전달합니다.<ul id="8687a30d-d454-4096-870c-a9f21f532dcc" class="bulleted-list"><li style="list-style-type:disc"><code>.nost </code>파일은 NostelgiAlbum 앱과 연동되도록 제작된 압축 확장자 입니다.</li></ul><div style="display: flex;">
+  <figure style="text-align: left;">
+    <a href="NostelgiAlbum/KakaoTalk_Photo_2023-05-21-23-29-29_001.jpeg">
+      <img style="width: 288px;" src="NostelgiAlbum/KakaoTalk_Photo_2023-05-21-23-29-29_001.jpeg" />
+    </a>
+  </figure>
+  <figure>
+    <a href="NostelgiAlbum/KakaoTalk_Photo_2023-05-22-01-10-48_003.jpeg">
+      <img style="width: 288px;" src="NostelgiAlbum/KakaoTalk_Photo_2023-05-22-01-10-48_003.jpeg" />
+    </a>
+  </figure>
+</div>
+<p id="c19018f4-a853-4808-99f6-8d48cf6c5fa4" class="">
+</p></li></ol><ol type="1" id="eeb7d3be-84b3-41e8-bb51-52ad87610c9f" class="numbered-list" start="2"><li><code>.nost</code> 파일을 공유 받은 사람은 해당 <code>.nost</code> 파일을 NostelgiAlbum 앱으로 열어 앨범을 불러올 수 있습니다.<figure id="03256a29-c395-4078-80d6-98c8db400cea" class="image"><a href="NostelgiAlbum/KakaoTalk_Photo_2023-05-22-01-10-48_001.jpeg"><img style="width:288px" src="NostelgiAlbum/KakaoTalk_Photo_2023-05-22-01-10-48_001.jpeg"/></a></figure><figure id="6589c0e1-a8b3-4765-a7cc-36ce601d04a5" class="image"><a href="NostelgiAlbum/IMG_453ABE6177AE-1.jpeg"><img style="width:288px" src="NostelgiAlbum/IMG_453ABE6177AE-1.jpeg"/></a></figure><p id="62fec0ab-5fbf-4156-875e-22292585a478" class="">
+</p></li></ol><ol type="1" id="816d1dd4-10aa-46e8-b637-cf951084c387" class="numbered-list" start="3"><li>앨범을 사람들과 주고 받으며 추억을 공유해보세요.</li></ol><p id="d90436d1-b0ec-4f7a-a2d4-531d94b81734" class="">
+</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">앨범 설정</summary><div class="indented"><ol type="1" id="4c9240c8-e8ff-4017-ae62-e016c41590a4" class="numbered-list" start="1"><li>앨범의 하단 <code>ToolBar</code> 의 톱니바퀴 아이콘을 탭 하여 앨범을 설정 할 수 있습니다.<figure id="62441852-066f-438a-9413-439edd9552ea" class="image"><a href="NostelgiAlbum/IMG_99590218228D-1.jpeg"><img style="width:288px" src="NostelgiAlbum/IMG_99590218228D-1.jpeg"/></a></figure></li></ol><p id="bf8cec63-ba0e-4fac-9fb8-a08c0a2bb573" class="">
+</p><ol type="1" id="db2cc939-7247-4b9b-8fd9-b5337a842394" class="numbered-list" start="2"><li>글꼴 설정에 들어가 원하는 글꼴을 설정해보세요. 글꼴은 해당 앨범에 한해 적용됩니다.<figure id="7307a673-aeb4-4171-b8c0-de21b5126690" class="image"><a href="NostelgiAlbum/IMG_F2E1995B4153-1%201.jpeg"><img style="width:288px" src="NostelgiAlbum/IMG_F2E1995B4153-1%201.jpeg"/></a></figure><p id="838e0f39-0c02-4bb9-b09c-c7b45ee293b2" class="">
+</p></li></ol><ol type="1" id="2795c5ef-3976-44e2-abbf-4cb807bdedc6" class="numbered-list" start="3"><li>첫 페이지 설정 창에서는 3가지 옵션 중 하나를 선택할 수 있습니다.<figure id="48fb0dd1-c278-44a4-90a3-4f11cb8534da" class="image"><a href="NostelgiAlbum/Untitled%205.png"><img style="width:288px" src="NostelgiAlbum/Untitled%205.png"/></a></figure><ul id="61b17950-5bff-4313-b1dc-b02759738aa5" class="bulleted-list"><li style="list-style-type:disc"><code>첫 페이지</code>: 앨범 진입 시, 1 페이지로 이동합니다.</li></ul><ul id="d1555f60-876b-4ac8-9666-d5bb19e0440f" class="bulleted-list"><li style="list-style-type:disc"><code>마지막 페이지</code>: 앨범 진입 시, 마지막 페이지로 이동합니다.</li></ul><ul id="cf89ce7b-9cf5-417d-8760-a4d1f2d3b35d" class="bulleted-list"><li style="list-style-type:disc"><code>마지막으로 본 페이지</code>: 앨범 진입 시, 마지막으로 보던 페이지로 이동합니다.</li></ul><p id="24687688-b4b5-4b60-b645-f37f2544211a" class="">
+</p></li></ol><ol type="1" id="3f0eb299-738f-4dc7-aed9-6873f721d345" class="numbered-list" start="4"><li>앨범 별로 원하는 설정을 선택해주세요 😄</li></ol></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">앨범 정보</summary><div class="indented"><ol type="1" id="8f394e14-46d4-414f-a78e-d5abfb3f4abf" class="numbered-list" start="1"><li>앨범의 하단 <code>ToolBar</code> 의 톱니바퀴 아이콘을 탭 하여 앨범의 정보를 확인 할 수 있습니다.<figure id="4d1e5556-af4f-4cca-a75d-e06a76c2d32f" class="image"><a href="NostelgiAlbum/Untitled%206.png"><img style="width:288px" src="NostelgiAlbum/Untitled%206.png"/></a></figure><ul id="d2484eb5-fa1a-4259-91f4-43f55eb09263" class="bulleted-list"><li style="list-style-type:disc"><code>이름</code>: 앨범 명</li></ul><ul id="a157377f-0ec3-4d49-8429-9241131b3ad7" class="bulleted-list"><li style="list-style-type:disc"><code>생성 날짜</code>: 앨범을 처음으로 생성한 날짜</li></ul><ul id="052d6e91-7702-4a1d-8ea0-c7b432d23388" class="bulleted-list"><li style="list-style-type:disc"><code>사진</code>: 사진 수</li></ul><ul id="b2b45f85-4994-4fbd-afcc-9d63a84cf19a" class="bulleted-list"><li style="list-style-type:disc"><code>페이지</code>: 페이지 수</li></ul></li></ol><p id="a69cec50-01c1-41da-af2d-91fb4e40af48" class="">
+</p></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">백업 및 복원</summary><div class="indented"><ol type="1" id="29222b64-095b-44bc-b3b6-6007620a217c" class="numbered-list" start="1"><li>홈 화면의 톱니바퀴 버튼을 누르면 나오는 iCloud 버튼을 통해 진행 할 수 있습니다.<figure id="84fba50f-2633-440b-9c09-882a32da5e78" class="image"><a href="NostelgiAlbum/IMG_0655F0874BA2-1.jpeg"><img style="width:288px" src="NostelgiAlbum/IMG_0655F0874BA2-1.jpeg"/></a></figure><p id="a06dd984-17f3-4a49-9745-34ea670fc838" class="">
+</p></li></ol><ol type="1" id="e79ce597-7fad-4ed2-959d-f2759f7ebb0c" class="numbered-list" start="2"><li>새로운 백업 파일 생성 시, 이전에 백업된 파일은 삭제 되며 백업 파일은 한번 복원하면 사라집니다.<figure id="60768880-bac4-4c41-b492-1a7172098c70" class="image"><a href="NostelgiAlbum/IMG_79DE34FF8932-1.jpeg"><img style="width:288px" src="NostelgiAlbum/IMG_79DE34FF8932-1.jpeg"/></a></figure><p id="51224396-f13f-416d-9a77-3700a0789afc" class="">
+</p></li></ol><ol type="1" id="60ea02ca-66fb-4f50-ac62-8a919f37f6fa" class="numbered-list" start="3"><li>복원 시, 이전에 생성된 앨범들은 전부 사라지며 백업 데이터도 복원이 완료되면 사라집니다.<figure id="fab5c09b-2dea-4468-af3d-c6ba883afd48" class="image"><a href="NostelgiAlbum/IMG_6FEA0799A3ED-1.jpeg"><img style="width:288px" src="NostelgiAlbum/IMG_6FEA0799A3ED-1.jpeg"/></a></figure><p id="096be863-fe2e-423f-acc3-16ec86b1c5ca" class="">
+</p></li></ol><ol type="1" id="aef02203-854b-4174-8ef8-54df3cb14a9f" class="numbered-list" start="4"><li>iCloud Drive를 사용해 현재 앱의 앨범들을 백업하고 백업한 파일들을 기반으로 복원할 수 있습니다.</li></ol><ol type="1" id="4ee3ad7a-3bc8-4b1c-b902-111242d56f42" class="numbered-list" start="5"><li>앱이 지워졌어도 기존의 백업 데이터가 있다면 복원이 가능합니다. 사용 전 주의 사항을 꼭 읽어주세요.</li></ol><ol type="1" id="5ed88ee9-2dd6-489c-8ff6-1a3ba2c519b2" class="numbered-list" start="6"><li>iCloud Drive 및 iCloud 기반으로 백업 및 복원을 진행했기 때문에 iCloud Drive 접근 권한을 설정해야 해당 기능을 사용 가능합니다.
+</li></ol></div></details><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3">테마 변경</summary><div class="indented"><ol type="1" id="f3b6a044-3168-4b8e-8c01-30b3633603f9" class="numbered-list" start="1"><li>첫 화면의 설정 아이콘 내부의 테마 설정 아이콘을 탭 하여 테마 색을 변경할 수 있습니다.<figure id="cf094141-a46e-4ebd-b376-29aedecf3eab" class="image"><a href="NostelgiAlbum/IMG_B0E60BFCEE28-1.jpeg"><img style="width:288px" src="NostelgiAlbum/IMG_B0E60BFCEE28-1.jpeg"/></a></figure></li></ol><p id="6a142c78-d7ef-47e8-aa3f-0360db9ba019" class="">
+</p><ol type="1" id="e70a036d-ce81-4690-b8e0-92d93ffe07ed" class="numbered-list" start="2"><li>파란색에서 녹색 테마로 바꿔 보았습니다.<figure id="45f9896f-72e2-4cef-8654-c0668deb2b45" class="image"><a href="NostelgiAlbum/IMG_87CD2A66DE38-1.jpeg"><img style="width:288px" src="NostelgiAlbum/IMG_87CD2A66DE38-1.jpeg"/></a></figure><p id="805632d9-cb09-4c94-a126-297972a9be5d" class="">
+</p></li></ol><ol type="1" id="7a689ab2-8c54-495a-8942-726b16fc4f1a" class="numbered-list" start="3"><li>앨범들과 잘 어울리는 테마 색으로 설정해보세요 :)</li></ol><p id="f9711837-4271-4102-9253-64c4f25004eb" class="">
+</p></div></details><p id="94086594-e4ca-4b89-aaf9-ec7b766e9320" class="">
+</p></div></article></body></html>
